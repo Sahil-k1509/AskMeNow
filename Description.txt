@@ -1,0 +1,1 @@
+Templates folder contain all the CSS code for the page and also the html code for login and signup.
