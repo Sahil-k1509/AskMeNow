@@ -1,0 +1,45 @@
+@import './mixins/mixins';
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+*:focus{
+    outline: none;
+}
+
+body{
+    font-size: 62.5%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: linear-gradient(#95cce2c5, rgba(12, 49, 71, 0.788));
+    border-radius: 0.5rem;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 29, 49, 0.795);
+    border-radius: 1rem;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(0, 90, 146);
+  }
+
+
+
+
+@import './components/login';
+@import './components/quiz';
+@import './components/navbar';
