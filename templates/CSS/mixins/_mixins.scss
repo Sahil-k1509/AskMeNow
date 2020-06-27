@@ -1,0 +1,73 @@
+@mixin centralise {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+// Animations
+
+@keyframes animate {
+    0%, 10%{
+        background-position: -200px;
+    }
+    15%{
+        background-position: top left;
+    }
+    90%{
+        background-position: top right;
+    }
+    100%{
+        background-position: 400px;
+    }
+}
+
+
+@keyframes changecolor {
+    0%{ color: rgb(255, 255, 255);   border: 1px solid transparent; background-color: transparent;}
+    20%{ color: rgb(11, 114, 155);   border: 1px solid white; background-color: rgba(255, 255, 255, 0.103); }
+    40%{ color: rgb(41, 201, 76);    border: 1px solid transparent; background-color: transparent;}
+    60%{ color: rgb(240, 42, 42);    border: 1px solid transparent; background-color: transparent;}
+    80%{ color: rgb(235, 238, 89);   border: 1px solid white; background-color: rgba(255, 255, 255, 0.103);  }
+    100%{ color: rgb(255, 255, 255); border: 1px solid transparent; background-color: transparent;}
+}
+
+@keyframes crazy{
+    0%   { transform: scale(1) skewX(2deg) skewY(-2deg) rotateY(-22deg) rotateX(10deg);  }
+    25%  { transform: scale(0.9) skewX(-8deg) skewY(2deg) rotateY(20deg) rotateX(-10deg);  }
+    50%  { transform: scale(1) skewX(4deg) skewY(-5deg) rotateY(32deg) rotateX(19deg);  }
+    75%  { transform: scale(0.8) skewX(-2deg) skewY(-8deg) rotateY(10deg) rotateX(-2deg);  }
+    100% { transform: scale(1) skewX(2deg) skewY(-2deg) rotateY(-22deg) rotateX(10deg);  }
+}
+
+@keyframes fluctuate {
+    0%{background-color: rgb(3, 131, 190);}
+    25%{background-color: rgb(141, 191, 211);}
+    50%{background-color: rgb(3, 131, 190);}
+    75%{background-color: rgb(141, 191, 211);}
+    100%{background-color: rgb(3, 131, 190);}
+    
+}
+
+/*
+@keyframes backgrad{
+    0%{
+        background: linear-gradient(0deg, #b3e7ff, #50c8ff, #00aeff);
+    }
+    33%{
+        background: linear-gradient(120deg, #00aeff, #88d9ff, #50c8ff);
+    }
+    66%{
+        background: linear-gradient(2400deg, #50c8ff, #00aeff, #88d9ff);
+    }
+    100%{
+        background: linear-gradient(360deg, #88d9ff, #50c8ff, #00aeff);
+    }
+}
+*/
