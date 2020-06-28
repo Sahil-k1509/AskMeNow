@@ -20,6 +20,7 @@
                         <div class='choice'><input type='radio' name='".$question['level']."$index' id='".$question['level']."".$index."option2' class='option' value='2'> <label for='option2' >".$question['options'][1]."</label></div>
                         <div class='choice'><input type='radio' name='".$question['level']."$index' id='".$question['level']."".$index."option3' class='option' value='3'> <label for='option3' >".$question['options'][2]."</label></div>
                         <div class='choice'><input type='radio' name='".$question['level']."$index' id='".$question['level']."".$index."option4' class='option' value='4'> <label for='option4' >".$question['options'][3]."</label></div>
+                        <input type='text' hidden name='answer".$question['level']."$index' style='display:hidden;' value='".$question['answer']."'/>    
                     </div>
                  </div>";
         }
@@ -151,18 +152,22 @@
                 $progress = $_SESSION['progress'];
                 if ($progress == '0')    {
                     echo "<h2 class='level-heading' style='color:lightgreen;'>Easy Easters</h2>";  
+                    shuffle($easyLevel);
                     makeLevel($easyLevel);     
                 }
                 else if($progress == '1'){  
                     echo "<h2 class='level-heading' style='color:yellow;'>Normie Networks</h2>";
+                    shuffle($MediumLevel);
                     makeLevel($MediumLevel);   
                 }
                 else if($progress == '2'){
                     echo "<h2 class='level-heading' style='color:orange;'>Hard Hercules</h2>";  
+                    shuffle($HardLevel);
                     makeLevel($HardLevel);     
                 }
                 else if($progress == '3'){  
                     echo "<h2 class='level-heading' style='color:red;'>Impossible Iceberg</h2>";
+                    shuffle($ExtremeLevel);
                     makeLevel($ExtremeLevel);  
                 }
             ?> 
