@@ -39,34 +39,6 @@
         array_push($correctAnswers, $_POST["answer$difficulty"."$i"]);
     }
 
-    /*
-    for ($i=0; $i <5; $i++){
-        if ($level == '0'){
-            if ($_POST["answerEasy$i"] == $answers[$i]){  $score += 20;  }
-            elseif ($answers[$i] == "Not Attempted") { $score += 0; } 
-            else { $score -= 5; } 
-            array_push($correctAnswers, $_POST["answerEasy$i"]);
-        } 
-        elseif ($level == '1'){
-            if ($_POST["answerMedium$i"] == $answers[$i]){  $score += 20;  }
-            elseif ($answers[$i] == "Not Attempted") { $score += 0; } 
-            else { $score -= 5; } 
-            array_push($correctAnswers, $_POST["answerMedium$i"]);
-        } 
-        elseif ($level == '2'){
-            if ($_POST["answerHard$i"] == $answers[$i]){  $score += 20;  }
-            elseif ($answers[$i] == "Not Attempted") { $score += 0; } 
-            else { $score -= 5; } 
-            array_push($correctAnswers, $_POST["answerHard$i"]);
-        } 
-        elseif ($level == '3'){
-            if ($_POST["answerExtreme$i"] == $answers[$i]){  $score += 20;  }
-            elseif ($answers[$i] == "Not Attempted") { $score += 0; } 
-            else { $score -= 5; } 
-            array_push($correctAnswers, $_POST["answerExtreme$i"]);
-        }
-    }
-    */
 
     $user = new User();
     $user->username = $_SESSION['username'];
@@ -89,16 +61,52 @@
     $_SESSION['score'] = $score;
     $_SESSION['passingScore'] = $passingScore;
 
-    /*
-    echo "<br>Level: $level <br>";
-    echo "<br> Score: ".$score."<br>";
-    */
 
+    $user->getScore();
+
+    $MaxScoreEasy = $user->MaxScoreEasy;
+    $MaxScoreMedium = $user->MaxScoreMedium;
+    $MaxScoreHard = $user->MaxScoreHard;
+    $MaxScoreExtreme = $user->MaxScoreExtreme;
+
+    switch ($_SESSION['presentLevel']){
+        case '0':
+            if ($score > $MaxScoreEasy){
+                $user->MaxScoreEasy = $score;
+            }
+            break;
+        case '1': 
+            if ($score > $MaxScoreMedium){
+                $user->MaxScoreMedium = $score;
+            }
+            break;
+        case '2': 
+            if ($score > $MaxScoreHard){
+                $user->MaxScoreHard = $score;
+            }
+            break;
+        case '3': 
+            if ($score > $MaxScoreExtreme){
+                $user->MaxScoreExtreme = $score;
+            }
+            break;
+    }
+
+    $user->Score = $user->MaxScoreEasy + $user->MaxScoreMedium + $user->MaxScoreHard + $user->MaxScoreExtreme;
+
+
+    if ($user->updateScore()){
+        // pass
+    } else {
+        echo "<br>Error Occured in updating score<br>";
+    }
+    
     if ($user->updateLevel()){
         header("Location: ../result.php");
         //echo "<br>Level Updated<br>";
     } else {
-        echo "<br>Error in updating<br>";
+        echo "<br>Error in updating Level<br>";
     }
+    
 
 ?>
