@@ -60,7 +60,8 @@
     font-size: 1.6rem;
     letter-spacing: 0.2rem;
     margin: 2rem;
-    text-shadow: 0 0 1rem rgb(7, 108, 175);
+    color: rgb(218, 218, 218);
+    text-shadow: 0 0 1rem rgb(112, 129, 139);
     animation: crazy 3s ease infinite;
 
     @media (max-width: 600px){
@@ -99,7 +100,7 @@
     border-radius: 0.5rem;
     padding: 1rem;
     max-width: 700px;
-    background: linear-gradient(135deg, rgb(220, 245, 255), rgb(151, 208, 255));
+    background: linear-gradient(135deg, rgb(220, 245, 255), rgb(98, 144, 161));
     height: 400px;
 
     @media (max-width: 600px){
@@ -128,7 +129,7 @@
             }
             .options{
                 padding: 0.2rem;
-                margin: 1rem 1rem 4rem 1rem;
+                margin: 1rem 1rem 3rem 1rem;
                 font-size: 1rem;
 
                 .choice{
@@ -176,7 +177,7 @@
 
         .submit-btn{
             padding: 0.5rem 1.4rem;
-            margin: 1rem 3rem;
+            margin: 0rem 3rem;
             border: none;
             background-color: rgba(19, 0, 73, 0.856);
             color: white;

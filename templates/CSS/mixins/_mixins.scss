@@ -28,6 +28,21 @@
     }
 }
 
+@keyframes backgrad{
+    0%{
+        background: linear-gradient(0deg, #9ab6c4, #2a4653);
+    }
+    33%{
+        background: linear-gradient(120deg, #2a4653, #9ab6c4);
+    }
+    66%{
+        background: linear-gradient(240deg, #2a4653, #9ab6c4);
+    }
+    100%{
+        background: linear-gradient(360deg, #9ab6c4, #2a4653);
+    }
+}
+
 
 @keyframes changecolor {
     0%{ color: rgb(255, 255, 255);   border: 1px solid transparent; background-color: transparent;}

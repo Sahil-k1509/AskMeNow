@@ -10,9 +10,9 @@
 .container{
     position: relative;
     width: 400px;
-    height: 400px;
+    height: 410px;
     max-width: 400px;
-    max-height: 400px;
+    max-height: 410px;
     z-index: 99;
     background-color: rgba(0, 0, 0, 0.63);
 }
@@ -22,8 +22,42 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     transition: all 0.5s ease;
+
+    .error-msg-form{
+        color: rgb(255, 17, 77);
+        font-size: 1rem;
+        margin: 0.4rem 1rem 0.6rem 1rem;
+    }
+
+    .progress-bar-pwd{
+        margin: 0.6rem;
+        position: relative;
+        
+        .progress-bar_text{
+            color: white;
+            font-size: 0.7rem;
+            
+        }
+
+        .progress-bar_wrap{
+            height: 0.3rem;
+            width: 10rem;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(151, 151, 151, 0.808);
+            border-radius: 1rem;
+
+
+            .progress-bar_item{
+                height: 100%;
+                border-radius: 1rem;
+                transition: all 0.7s ease;
+            }
+        }
+    }
 
     h2{
         border-bottom: 0.1rem solid white;
@@ -55,6 +89,13 @@
         background-color: rgba(19, 0, 73, 0.856);
         color: white;
         border-radius: 2rem;
+        transition: all 0.5s ease;
+    }
+
+    .submit-btn:hover{
+        background-color: rgba(226, 225, 225, 0.959);
+        color: rgba(19, 0, 73, 0.856);
+        border: 0.1rem solid rgba(19, 0, 73, 0.856);
     }
 
     .redirect-btn{
@@ -73,6 +114,18 @@
     transform: translateX(0);
 }
 
+#forgotpwd-form{
+    transform: translateY(100%);
+}
+
+.container.forgot-form-active #forgotpwd-form{
+    transform: translateY(0);
+}
+
+.container.forgot-form-active #login-form{
+    transform: translateY(-100%);
+}
+
 .container.signup-form-active #login-form{
     transform: translateX(-100%);
 }
@@ -80,3 +133,4 @@
 .container.signup-form-active #signup-form{
     transform: translateX(0);
 }
+

@@ -28,6 +28,40 @@
   }
 }
 
+@-webkit-keyframes backgrad {
+  0% {
+    background: -webkit-gradient(linear, left bottom, left top, from(#9ab6c4), to(#2a4653));
+    background: linear-gradient(0deg, #9ab6c4, #2a4653);
+  }
+  33% {
+    background: linear-gradient(120deg, #2a4653, #9ab6c4);
+  }
+  66% {
+    background: linear-gradient(240deg, #2a4653, #9ab6c4);
+  }
+  100% {
+    background: -webkit-gradient(linear, left bottom, left top, from(#9ab6c4), to(#2a4653));
+    background: linear-gradient(360deg, #9ab6c4, #2a4653);
+  }
+}
+
+@keyframes backgrad {
+  0% {
+    background: -webkit-gradient(linear, left bottom, left top, from(#9ab6c4), to(#2a4653));
+    background: linear-gradient(0deg, #9ab6c4, #2a4653);
+  }
+  33% {
+    background: linear-gradient(120deg, #2a4653, #9ab6c4);
+  }
+  66% {
+    background: linear-gradient(240deg, #2a4653, #9ab6c4);
+  }
+  100% {
+    background: -webkit-gradient(linear, left bottom, left top, from(#9ab6c4), to(#2a4653));
+    background: linear-gradient(360deg, #9ab6c4, #2a4653);
+  }
+}
+
 @-webkit-keyframes changecolor {
   0% {
     color: white;
@@ -251,9 +285,9 @@ body {
 .container {
   position: relative;
   width: 400px;
-  height: 400px;
+  height: 410px;
   max-width: 400px;
-  max-height: 400px;
+  max-height: 410px;
   z-index: 99;
   background-color: rgba(0, 0, 0, 0.63);
 }
@@ -263,9 +297,43 @@ body {
   width: 100%;
   height: 100%;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+
+.form-container .error-msg-form {
+  color: #ff114d;
+  font-size: 1rem;
+  margin: 0.4rem 1rem 0.6rem 1rem;
+}
+
+.form-container .progress-bar-pwd {
+  margin: 0.6rem;
+  position: relative;
+}
+
+.form-container .progress-bar-pwd .progress-bar_text {
+  color: white;
+  font-size: 0.7rem;
+}
+
+.form-container .progress-bar-pwd .progress-bar_wrap {
+  height: 0.3rem;
+  width: 10rem;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: rgba(151, 151, 151, 0.808);
+  border-radius: 1rem;
+}
+
+.form-container .progress-bar-pwd .progress-bar_wrap .progress-bar_item {
+  height: 100%;
+  border-radius: 1rem;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
 }
 
 .form-container h2 {
@@ -299,6 +367,14 @@ body {
   background-color: rgba(19, 0, 73, 0.856);
   color: white;
   border-radius: 2rem;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.form-container .submit-btn:hover {
+  background-color: rgba(226, 225, 225, 0.959);
+  color: rgba(19, 0, 73, 0.856);
+  border: 0.1rem solid rgba(19, 0, 73, 0.856);
 }
 
 .form-container .redirect-btn {
@@ -316,6 +392,21 @@ body {
 #login-form {
   -webkit-transform: translateX(0);
           transform: translateX(0);
+}
+
+#forgotpwd-form {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.container.forgot-form-active #forgotpwd-form {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.container.forgot-form-active #login-form {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
 .container.signup-form-active #login-form {
@@ -405,7 +496,8 @@ body {
   font-size: 1.6rem;
   letter-spacing: 0.2rem;
   margin: 2rem;
-  text-shadow: 0 0 1rem #076caf;
+  color: #dadada;
+  text-shadow: 0 0 1rem #70818b;
   -webkit-animation: crazy 3s ease infinite;
           animation: crazy 3s ease infinite;
 }
@@ -449,7 +541,7 @@ body {
   border-radius: 0.5rem;
   padding: 1rem;
   max-width: 700px;
-  background: linear-gradient(135deg, #dcf5ff, #97d0ff);
+  background: linear-gradient(135deg, #dcf5ff, #6290a1);
   height: 400px;
 }
 
@@ -478,7 +570,7 @@ body {
 
 .gamebox .questions-window .question .options {
   padding: 0.2rem;
-  margin: 1rem 1rem 4rem 1rem;
+  margin: 1rem 1rem 3rem 1rem;
   font-size: 1rem;
 }
 
@@ -532,7 +624,7 @@ body {
 
 .gamebox .questions-window .submit-btn {
   padding: 0.5rem 1.4rem;
-  margin: 1rem 3rem;
+  margin: 0rem 3rem;
   border: none;
   background-color: rgba(19, 0, 73, 0.856);
   color: white;
