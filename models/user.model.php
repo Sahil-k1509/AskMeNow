@@ -1,5 +1,20 @@
 <?php 
 
+    /*
+        // Query to Create the table
+        $createTableUsersQuery = "CREATE TABLE users(
+            id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+            username VARCHAR(100) NOT NULL,
+            userpassword VARCHAR(100) NOT NULL,
+            progress INT NOT NULL DEFAULT 0,
+            Score INT NOT NULL DEFAULT 0,
+            MaxScoreEasy INT NOT NULL DEFAULT 0,
+            MaxScoreMedium INT NOT NULL DEFAULT 0,
+            MaxScoreHard INT NOT NULL DEFAULT 0,
+            MaxScoreExtreme INT NOT NULL DEFAULT 0,
+        );"
+    */
+
     class User extends Dbh{
         private $table = 'users';
 
@@ -97,6 +112,16 @@
             if ($stmt->execute()){ return true;  } 
             printf("Error %s. \n", $stmt->error);
             return false;
+        }
+
+        public function createLeaderBoard(){
+            $query = "SELECT username, Score, MaxScoreExtreme, MaxScoreEasy, MaxScoreMedium, MaxScoreHard FROM ".$this->table." 
+                        ORDER BY Score DESC, MaxScoreExtreme DESC, MaxScoreHard DESC, MaxScoreMedium DESC, MaxScoreEasy DESC, username ";
+            $stmt = $this->connect()->query($query);
+
+            $stmt->execute();
+
+            return $stmt;
         }
 
     }
