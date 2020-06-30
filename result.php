@@ -115,11 +115,14 @@
             </tr>
         </table>
 
-            <?php
-                if ($score > $passingScore){  echo "<h2 style='margin: 1.5rem; color: green;'>Congrats! You passed the level.</h2>"; }else{ echo "<h2 style='margin: 1.5rem; color: red;'>Please Try again!</h2>"; }
-            ?>
+        <a href="./api/board.php" style='text-decoration: none; color: white; background-color: rgba(0,0,0,0.8); color: white; padding: 0.5rem; border-radius: 0.3rem;'>Check Leader Boards</a>
+                    
 
-            <a href="./quiz.php" style="text-decoration: none; margin: 4rem; padding: 0.7rem 2rem; border-radius: 0.5rem; background-color: #076caf; color: white; transition: all 1s ease;" >Go to quiz</a> <br><br>
+        <?php
+            if ($score > $passingScore){  echo "<h2 style='margin: 1.5rem; color: green;'>Congrats! You passed the level.</h2>"; }else{ echo "<h2 style='margin: 1.5rem; color: red;'>Please Try again!</h2>"; }
+        ?>
+
+        <a href="./quiz.php" style="text-decoration: none; margin: 4rem; padding: 0.7rem 2rem; border-radius: 0.5rem; background-color: #076caf; color: white; transition: all 1s ease;" >Go to quiz</a> <br><br>
                 
     </div>
 </body>
