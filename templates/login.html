@@ -5,12 +5,15 @@
             <h2>LOGIN</h2>
             <form action="./api/login.php" method="POST">
                 <label for="username">Username</label> <br>
-                <input type="text" class="username" id="login-username" name="username" placeholder="Username" required> <br><br>
+                <input type="text" class="username" id="login-username" name="username" placeholder="Username" required> <br>
+                <div class='error-msg-form' id="login-error-uname"></div>
                 <label for="password">Password</label> <br>
-                <input type="password" class="password" id="login-password" name="password" placeholder="Password" required> <br><br>
+                <input type="password" class="password" id="login-password" name="password" placeholder="Password" required> <br>
+                <div class='error-msg-form' id="login-error-pwd"></div><br>
                 <button type="submit" name="submit" class="submit-btn" id="login-submit">Submit</button>
             </form>
-            <button class="redirect-btn" id="signup-redirect-btn">Don't have an account? Sign up Now!</button>
+            <button class="redirect-btn" id="signup-redirect-btn">Don't have an account? Sign up Now!</button> <br>
+            <button class="redirect-btn" id="forgot-redirect-btn" style="color:rgb(155, 155, 155);">Forgot Password?</button>
         </div>
 
 
@@ -18,14 +21,42 @@
             <h2>SIGN UP</h2>
             <form action="./api/signup.php" method="POST">
                 <label for="username">Username</label> <br>
-                <input type="text" class="username" id="signup-username" name="username" placeholder="Username" required> <br><br>
+                <input type="text" class="username" id="signup-username" name="username" placeholder="Username" required> <br>
+                <div class='error-msg-form' id="signup-error-uname"></div>
                 <label for="password">Password</label> <br>
-                <input type="password" class="password" id="signup-password" name="password" placeholder="Password" required> <br><br>
+                <input type="password" class="password" id="signup-password" name="password" placeholder="Password" required> <br>
+                <div class="progress-bar-pwd">
+                    <div class="progress-bar_wrap">
+                        <div class="progress-bar_item"></div>
+                    </div> 
+                    <span class="progress-bar_text">Password is blank</span> 
+                </div> 
+                
                 <button type="submit" name="submit" class="submit-btn" id="signup-submit">Submit</button>
             </form>
             <button class="redirect-btn" id="login-redirect-btn">Already have an Account? Login!</button>
         </div>
 
+
+        
+        <div class="form-container"  id="forgotpwd-form">
+            <h2>Forgot Password</h2>
+            <span id='close-forgotpwd' style="position: absolute; font-size: 2rem; color: white; top: 0; right: 0; transform: translate(-0.3rem, -0.2rem); cursor: pointer;">&times;</span>
+            <form action="./api/forgotpwd.php" method="POST">
+                <label for="username">Username</label> <br>
+                <input type="text" class="username" id="forgotpwd-username" name="username" placeholder="Username" required> <br><br>
+                <label for="password">New Password</label> <br>
+                <input type="password" class="password" id="forgotpwd-password" name="password" placeholder="New Password" required> <br>
+                <div class="progress-bar-pwd">
+                    <div class="progress-bar_wrap">
+                        <div class="progress-bar_item"></div>
+                    </div> 
+                    <span class="progress-bar_text">Password is blank</span> 
+                </div> 
+                
+                <button type="submit" name="submit" class="submit-btn" id="forgotpwd-submit">Submit</button>
+            </form>
+        </div>
 
     </div>
 </div>
