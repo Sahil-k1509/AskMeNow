@@ -1,0 +1,111 @@
+.leader-page{
+    text-align: center;
+    background-color: rgba(154, 185, 202, 0.76);
+
+    @media (min-width: 1000px){
+        width: 80%;
+        height: 100vh;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        border-right: 0.1rem solid rgba(46, 46, 46, 0.945);
+        border-left: 0.1rem solid rgba(46, 46, 46, 0.945);
+        padding: 2rem;
+        box-shadow: 0 0 0.5rem rgba(46, 46, 46, 0.945), 0 0 1rem rgba(46, 46, 46, 0.945), 0 0 10rem rgba(46, 46, 46, 0.945), ;
+    }
+
+
+    .leader-heading{
+        text-align: center;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .goto-btn-container{
+        margin: 2rem;
+        align-items: center;
+        justify-content: center;
+
+        .leader-goto-btn{
+            margin: 0.2rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            border: none;
+            color: white;
+            background-color: rgba(27, 27, 27, 0.966);
+        }
+    }
+
+    .leader-container{
+        .leaderboard-table{
+            tr{
+                th{
+                    background-color: rgba(27, 27, 27, 0.966);
+                    color: white;
+                    border: 1px solid white;
+                }
+                
+                td.rank-col-leader{
+                    background-color: rgba(27, 27, 27, 0.966);
+                    color: white;
+                }
+                td.col-uname{
+                    background-color: rgba(185, 225, 238, 0.829);
+                }
+                td.col-score{
+                    background-color: rgba(185, 225, 238, 0.829);
+                }
+                td.col-easy{
+                    background-color: rgb(162, 236, 162);
+                }
+                td.col-med{
+                    background-color: rgb(255, 255, 115);
+                }
+                td.col-hard{
+                    background-color: rgb(255, 195, 82);
+                }
+                td.col-extreme{
+                    background-color: rgb(255, 132, 132);
+                }
+            }
+            tr.active-user-row{        
+                td.col-uname{
+                    color: white;
+                    background-color: darken(rgba(185, 225, 238, 0.829), 50);
+                }
+                td.col-score{
+                    color: white;
+                    background-color: darken(rgba(185, 225, 238, 0.829), 50);
+                }
+                td.col-easy{
+                    color: white;
+                    background-color: darken(rgb(162, 236, 162), 50);
+                }
+                td.col-med{
+                    color: white;
+                    background-color: darken(rgb(255, 255, 115), 50);
+                }
+                td.col-hard{
+                    color: white;
+                    background-color: darken(rgb(255, 195, 82), 50);
+                }
+                td.col-extreme{
+                    color: white;
+                    background-color: darken(rgb(255, 132, 132), 50);
+                }
+            }
+        }
+    }
+
+    .result-redirect-link{
+        text-decoration: none;
+        color: white;
+        background-color: rgba(27, 27, 27, 0.966);
+        padding: 0.5rem 2rem;
+        margin: 4rem;
+        border-radius: 1rem;
+    }
+
+
+}
