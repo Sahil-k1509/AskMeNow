@@ -40,9 +40,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Me</title>
 
+    <script src="./jquery-3.5.1.min.js"></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo CSS_PATH; ?>main.css">
+
 
     <style>
         *{
