@@ -4,7 +4,7 @@
 
     @media (min-width: 1000px){
         width: 80%;
-        height: 100vh;
+        height: 130vh;
         position: absolute;
         left: 50%;
         transform: translate(-50%, 0);
@@ -19,6 +19,11 @@
         text-align: center;
         padding: 0.5rem;
         font-size: 2rem;
+        font-weight: 900;
+        border-bottom: 0.1rem solid black;
+        border-top-right-radius: 0.5rem;
+        border-top-left-radius: 0.5rem;
+        background-color: rgba(231, 251, 255, 0.418);
     }
 
     .goto-btn-container{
@@ -29,11 +34,18 @@
         .leader-goto-btn{
             margin: 0.2rem;
             padding: 0.3rem 0.8rem;
-            border-radius: 0.3rem;
+            border-radius: 0.6rem;
             cursor: pointer;
             border: none;
             color: white;
             background-color: rgba(27, 27, 27, 0.966);
+            transition: all 0.5s ease;
+        }
+        .leader-goto-btn.leader-active-page-btn{
+            box-shadow: 0 0 0.2rem rgb(6, 197, 255), 0 0 0.8rem rgb(6, 197, 255), 0 0 1rem rgb(6, 197, 255);
+        }
+        .leader-goto-btn:hover{
+            transform: scale(1.2) translateY(-0.5rem);
         }
     }
 
@@ -51,22 +63,22 @@
                     color: white;
                 }
                 td.col-uname{
-                    background-color: rgba(185, 225, 238, 0.829);
+                    background-color: rgba(208, 241, 252, 0.747);
                 }
                 td.col-score{
-                    background-color: rgba(185, 225, 238, 0.829);
+                    background-color: rgba(208, 241, 252, 0.747);
                 }
                 td.col-easy{
-                    background-color: rgb(162, 236, 162);
+                    background-color: rgba(133, 231, 133, 0.774);
                 }
                 td.col-med{
-                    background-color: rgb(255, 255, 115);
+                    background-color: rgba(253, 253, 93, 0.753);
                 }
                 td.col-hard{
-                    background-color: rgb(255, 195, 82);
+                    background-color: rgba(255, 184, 51, 0.767);
                 }
                 td.col-extreme{
-                    background-color: rgb(255, 132, 132);
+                    background-color: rgba(255, 132, 132, 0.808);
                 }
             }
             tr.active-user-row{        
@@ -80,19 +92,19 @@
                 }
                 td.col-easy{
                     color: white;
-                    background-color: darken(rgb(162, 236, 162), 50);
+                    background-color: darken(rgb(137, 255, 137), 50);
                 }
                 td.col-med{
                     color: white;
-                    background-color: darken(rgb(255, 255, 115), 50);
+                    background-color: darken(rgb(255, 255, 133), 50);
                 }
                 td.col-hard{
                     color: white;
-                    background-color: darken(rgb(255, 195, 82), 50);
+                    background-color: darken(rgb(255, 215, 140), 50);
                 }
                 td.col-extreme{
                     color: white;
-                    background-color: darken(rgb(255, 132, 132), 50);
+                    background-color: darken(rgb(255, 137, 137), 50);
                 }
             }
         }
@@ -103,8 +115,13 @@
         color: white;
         background-color: rgba(27, 27, 27, 0.966);
         padding: 0.5rem 2rem;
-        margin: 4rem;
         border-radius: 1rem;
+        font-size: 1rem;
+        transition: all 0.5s ease;
+    }
+    .result-redirect-link:hover{
+        transform: scale(1.7) translateY(-1rem);
+        box-shadow: 0 0 2rem rgb(0, 23, 32);
     }
 
 
