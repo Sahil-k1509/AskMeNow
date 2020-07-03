@@ -6,15 +6,6 @@
     $leaderboard = $_SESSION['leaderboard'];
 
     $personPerPage = 10;
-
-    if (isset($_GET['goto-btn'])){
-        $currentPage = $_GET['goto'];
-    } else {
-        $currentPage = 1;
-    }
-
-    $peopleToShow = array_slice($leaderboard, ($currentPage-1)*$personPerPage, $personPerPage);
-
     $num_pages = floor(count($leaderboard)/$personPerPage);
     
     //echo $num_pages."<br>";
@@ -23,7 +14,16 @@
     if ($num_pages != count($leaderboard)/$personPerPage){
         $num_pages++;
     }
-    
+
+    if (isset($_GET['goto-btn'])){
+        if ($_GET['goto']!="" && ($_GET['goto']>0 && $_GET['goto']<=$num_pages)){$currentPage = $_GET['goto'];}
+        else {$currentPage = 1;}
+    } else {
+        $currentPage = 1;
+    }
+
+    $peopleToShow = array_slice($leaderboard, ($currentPage-1)*$personPerPage, $personPerPage);
+
 ?>
 
 
@@ -94,17 +94,30 @@
         <h1 class='leader-heading'>LEADERBOARD</h1>
         <div class='goto-btn-container' style='display: flex;'>
             <?php
+                $firstTime = true;
                 for ($i=1; $i <= $num_pages; $i++){
-                    echo "<form action='leaderboard.php' method='GET'>";
-                    echo "<input hidden type='text' value='$i' name='goto' />";
-                    echo "<button type='submit' class='leader-goto-btn' name='goto-btn'>$i</button>";
-                    echo "</form>";
+                    if ($i<=1 || $i>=$num_pages || abs($currentPage-$i)<=1 || $i == floor($num_pages/2)){
+                        $activePageBtn = $i == $currentPage ? "leader-active-page-btn" : null;
+                        echo "<form action='leaderboard.php' method='GET'>";
+                        echo "<input hidden type='text' value='$i' name='goto' />";
+                        echo "<button type='submit' class='leader-goto-btn $activePageBtn' name='goto-btn'>$i</button>";
+                        echo "</form>";
+                        $firstTime = true;
+                    } else {
+                        if ($firstTime) {echo "<div style='font-weight: 900; letter-spacing: 0.04rem;'>.........</div>"; $firstTime = false;}
+                        
+                    }
                 }
+                echo "<div style='font-size: 0.8rem; font-weight: 900;'><pre>   OR   </pre></div>";
+                echo "<form action='leaderboard.php' method='GET'>";
+                echo "<input type='text' placeholder='Enter Page' name='goto' style='border-radius: 0.4rem; border: 1px solid black; padding: 0.1rem; width: 5rem;' />";
+                echo "<button type='submit' class='leader-goto-btn' name='goto-btn'>GO!</button>";
+                echo "</form>";
             ?>
         </div>
 
         <div class="leader-container">
-            <h1>Global</h1>
+            <h1>Global Rankings</h1>
             <table Cellspacing=0 class='leaderboard-table'>
                 <tr>
                     <th>Rank</th>
@@ -131,7 +144,7 @@
                 ?>
             </table>
 
-            <h1>Your Score</h1>
+            <h1>Your Scores</h1>
             <table Cellspacing=0 class='leaderboard-table'>
                 <tr>
                     <th>Rank</th>
@@ -156,9 +169,11 @@
             </table>
         </div>
             
-        <?php
-            echo "<a href='./result.php' class='result-redirect-link'>Result</a>";
-        ?>
+        <div style='margin: 3rem;'>
+            <?php
+                echo "<a href='./result.php' class='result-redirect-link'>Result</a>";
+            ?>
+        </div>
 
 </body>
 </html>
