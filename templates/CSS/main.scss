@@ -16,6 +16,13 @@ body{
     font-size: 62.5%;
 }
 
+::selection{
+  color: white;
+  background-color: #313131;
+}
+
+
+
 ::-webkit-scrollbar {
     width: 10px;
   }
