@@ -26,7 +26,26 @@
             include_once('templates/login.html');
         }  
     ?>
+
+    <?php 
+        // Forgot password handlers
+        if (isset($_GET['changepwd'])){
+            $response = $_GET['changepwd'];
+            if ($response == "noacc"){ ?>
+                <script>alert("You don't have an account. Please create an account.")</script>
+            <?php } 
+            elseif ($response == "oldpwd"){ ?>
+                <script>alert("Your new password can't be your old password.")</script>
+            <?php } 
+            elseif ($response == "fail"){ ?>
+                <script>alert("Error occured in changing passwords. This is from server side. Sorry for inconvinience.")</script>
+            <?php } 
+            elseif ($response == "success"){ ?>
+                <script>alert("Password changed successfully. You can now login with new password.")</script>
+            <?php }
+        }
     
+    ?>
 
     <script>
         window.history.forward();
