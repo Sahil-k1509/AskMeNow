@@ -124,6 +124,21 @@
             return $stmt;
         }
 
+        public function changePassword(){
+            $query = "UPDATE ".$this->table." SET userpassword=:password WHERE username=:username";
+            $stmt = $this->connect()->prepare($query);
+            
+            $this->username = htmlspecialchars(strip_tags($this->username));
+            $this->password = htmlspecialchars(strip_tags($this->password));
+            
+            $stmt->bindParam(':username', $this->username);
+            $stmt->bindParam(':password', $this->password);
+            
+            if ($stmt->execute()){ return true;  } 
+            printf("Error %s. \n", $stmt->error);
+            return false;
+        }
+
     }
 
 ?>
