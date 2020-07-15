@@ -38,9 +38,8 @@
 
         th, td{
             padding: 1rem 2rem;
-            border: 0.1rem solid black;
-            border-radius: 0.5rem;
-            border-collapse: collapse;
+            border-right: 0.1rem solid rgba(20, 20, 20, 0.8);
+            border-bottom: 0.1rem solid rgba(20, 20, 20, 0.8);
         }
 
                 
@@ -85,7 +84,7 @@
 
     </style>
 </head>
-<body style='width: 100%;  background-color: rgba(50, 150, 250, 0.3);'>
+<body style='width: 100%;  background-color: rgba(0, 120, 190, 0.3);'>
 
     <div style="text-align: center; width: 100vw; height: 100%;">
         <h1>Hi <?php echo $_SESSION['username'] ?>, We have calculated your results:</h1>
@@ -101,8 +100,8 @@
                 for ($i=1; $i < $numQuestion + 1; $i++){
                     echo "  <tr> 
                                 <td style='background-color: #0067863f;'>$i</td>
-                                <td style='background-color: #35b1eb6b;'>".$answers[$i-1]."</td>
-                                <td style='background-color: #35b1eb6b;'>".$correctAnswers[$i-1]."</td>";
+                                <td>".$answers[$i-1]."</td>
+                                <td>".$correctAnswers[$i-1]."</td>";
                             if ($answers[$i-1]==$correctAnswers[$i-1]){  echo "<td style='background-color: lightgreen;'> +$CorrectAdded </td>";   }
                             elseif ($answers[$i-1]=="Not Attempted"){  echo "<td> 0 </td>";   }
                             else    {  echo "<td style='background-color: pink;'> -$WrongPenalty </td>";   }
@@ -119,10 +118,10 @@
                     
 
         <?php
-            if ($score > $passingScore){  echo "<h2 style='margin: 1.5rem; color: green;'>Congrats! You passed the level.</h2>"; }else{ echo "<h2 style='margin: 1.5rem; color: red;'>Please Try again!</h2>"; }
+            if ($score > $passingScore){  echo "<h2 style='margin: 1.5rem auto; color: green; box-shadow: 0 0 1rem green, 0 0 2rem green; min-width: 40%; max-width:50%; width: 30rem; border-radius: 1rem;  padding: 0.5rem; background-color: rgba(0, 200, 5, 0.4);'>Congrats! You passed.</h2>"; }else{ echo "<h2 style='margin: 1.5rem auto; color: red; box-shadow: 0 0 1rem red, 0 0 2rem red;  min-width: 40%; max-width:50%; width: 30rem; border-radius: 1rem; padding: 0.5rem; background-color: rgba(200, 0, 0, 0.2);'>Please Try again!</h2>"; }
         ?>
 
-        <a href="./quiz.php" style="text-decoration: none; margin: 4rem; padding: 0.7rem 2rem; border-radius: 0.5rem; background-color: #076caf; color: white; transition: all 1s ease;" >Go to quiz</a> <br><br>
+        <a href="./quiz.php" style="text-decoration: none; margin: 4rem; padding: 0.7rem 2rem; border-radius: 0.5rem; background-color: rgba(10, 10, 10, 0.8); color: white; transition: all 1s ease;" >Go to quiz</a> <br><br>
                 
     </div>
 </body>
