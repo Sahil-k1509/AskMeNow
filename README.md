@@ -20,7 +20,6 @@
 - A chat box to send real time messages.
 - A challenge section where user can have rapid fire quiz rounds with each other.
 
-### Note: All the features, questions, styles/animations are created by the developer 'Sahil Kumar Bairagi' and are subjected to Copyright. They are solely created to be used in this project only. You may copy them in your projects as well if you wish only after informing the Copyright Holder aka the developer. Images and gifs used in the project have been taken from non copyrightable sources on internet and are fair to be used.
 
 ![Signup Page](readmeImage/signup.png)
 ![Post login Window](readmeImage/poster.png)
