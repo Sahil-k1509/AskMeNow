@@ -1,5 +1,5 @@
 # AskMeNow
-'AskMeNow' is a quizzing website where you can create an account and login to play a quizzing game. 
+'AskMeNow' is a quizzing website where you can create an account and login to play a quizzing game. [Visit](http://askmenowww.000webhostapp.com/)
 
 ## Here is a guide and description to get you started:
 - You can create your account or login if already have an account. In case, you forget password, there is provision to change it.
